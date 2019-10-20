@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Data;
 using Dapper;
@@ -6,19 +5,19 @@ using keepr.Models;
 
 namespace keepr.Repositories
 {
-  public class KeepsRepository
+  public class VaultsRepository
   {
     private readonly IDbConnection _db;
-    public KeepsRepository(IDbConnection db)
+    public VaultsRepository(IDbConnection db)
     {
       _db = db;
     }
 
-
-    public IEnumerable<Keep> Get()
+    public IEnumerable<Vault> Get()
     {
-      string sql = "SELECT * FROM keeps";
-      return _db.Query<Keep>(sql);
+      string sql = "SELECT * FROM vaults";
+      return _db.Query<Vault>(sql);
     }
+
   }
 }

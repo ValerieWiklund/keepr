@@ -4,18 +4,17 @@ using keepr.Repositories;
 
 namespace keepr.Services
 {
-  public class KeepsService
+  public class VaultsService
   {
-    private readonly KeepsRepository _repo;
-    public KeepsService(KeepsRepository repo)
+    private readonly VaultsRepository _repo;
+    public VaultsService(VaultsRepository repo)
     {
       _repo = repo;
     }
 
-    public IEnumerable<Keep> Get()
+    public IEnumerable<Vault> Get()
     {
       return _repo.Get();
     }
-
   }
 }
