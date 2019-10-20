@@ -43,6 +43,7 @@ namespace Keepr.Controllers
         return BadRequest(e.Message);
       }
     }
+
     [Authorize]
     [HttpGet("user/{id}")]
     public ActionResult<IEnumerable<Keep>> GetByUser()

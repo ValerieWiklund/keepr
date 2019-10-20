@@ -16,19 +16,19 @@ namespace Keepr.Repositories
 
     public IEnumerable<Keep> Get()
     {
-      string sql = $"SELECT * FROM keeps";
+      string sql = "SELECT * FROM keeps";
       return _db.Query<Keep>(sql);
     }
 
     public Keep Get(int id)
     {
-      string sql = $"SELECT * FROM keeps WHERE id = @id";
+      string sql = "SELECT * FROM keeps WHERE id = @id";
       return _db.QueryFirstOrDefault<Keep>(sql, new { id });
     }
 
     public IEnumerable<Keep> GetByUser()
     {
-      string sql = $"SELECT * FROM keeps WHERE userId = @UserId";
+      string sql = "SELECT * FROM keeps WHERE userId = @UserId";
       return _db.Query<Keep>(sql);
     }
     public int Create(Keep newKeep)
@@ -56,7 +56,7 @@ namespace Keepr.Repositories
 
     public void Delete(int id)
     {
-      string sql = $"DELETE FROM keeps WHERE id = @id";
+      string sql = "DELETE FROM keeps WHERE id = @id";
       _db.Execute(sql, new { id });
     }
 
