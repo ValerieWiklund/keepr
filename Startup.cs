@@ -62,8 +62,8 @@ namespace Keepr
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
       services.AddTransient<AccountRepository>();
       services.AddTransient<AccountService>();
-      services.AddTransient<KeepsRepository>();
       services.AddTransient<KeepsService>();
+      services.AddTransient<KeepsRepository>();
     }
     private IDbConnection CreateDbConnection()
     {
@@ -109,3 +109,4 @@ namespace Keepr
     }
   }
 }
+
